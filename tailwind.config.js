@@ -1,12 +1,11 @@
 module.exports = {
-  purge: [
+  content: [
     './src/**/*.js',
     './src/**/*.jsx',
     './src/**/*.ts',
     './src/**/*.tsx',
     './index.html'
   ],
-  // darkMode: 'class',
   theme: {
     screens: {
       sm: '800px',
@@ -17,11 +16,6 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Work Sans', 'sans-serif'],
-    },
-  },
-  variants: {
-    extend: {
-      margin: ['last']
     },
   },
   plugins: [],
