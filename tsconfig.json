@@ -11,6 +11,7 @@
       "esnext"
     ],
     "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
