@@ -3,9 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 const DEFAULT_ENV_VARS = [
+  'BASE_PATH',
   'DEV_AUTO_OPEN',
   'DEV_PORT',
-  'PUBLIC_PATH',
 ];
 
 const ENV_PREFIX = /^REACT_APP_/;
@@ -20,6 +20,7 @@ function loadEnv() {
   const envFiles = [
     generatePath(`.env.${currentEnv}.local`),
     generatePath(`.env.${currentEnv}`),
+    generatePath(`.env.local`),
     generatePath('.env'),
   ];
 

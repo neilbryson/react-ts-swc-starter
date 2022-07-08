@@ -23,6 +23,24 @@ npm start
 npm run build
 ```
 
+## Environment configuration
+
+Similar to [Create React App](https://github.com/facebook/create-react-app), environment variables can be set for
+production and development environments.
+
+### `.env` file prioritisation
+1. `.env.{ENVIRONMENT}.local`
+2. `.env.{ENVIRONMENT}`
+3. `.env.local`
+4. `.env`
+
+### Default environment variables
+* `BASE_PATH`
+* `DEV_AUTO_OPEN` : Automatically open the web application in a browser
+* `DEV_PORT` : Port to bind the dev server
+
+Additional environment variables can be used in-app as long as these are prefixed with `REACT_APP_`.
+
 ## Technologies used
 
 * [ESLint](https://eslint.org/)
