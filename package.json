@@ -50,12 +50,12 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/**/*.ts?(x)",
-      "!**/node_modules/**"
+      "<rootDir>/src/**/*.ts?(x)",
+      "!**/node_modules/**",
+      "!<rootDir>/src/index.tsx"
     ],
-    "rootDir": "src",
     "setupFilesAfterEnv": [
-      "./setupTests.ts"
+      "<rootDir>/src/setupTests.ts"
     ],
     "testEnvironment": "jest-environment-jsdom",
     "transform": {

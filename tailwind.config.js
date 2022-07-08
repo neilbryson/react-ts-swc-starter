@@ -3,6 +3,7 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
     './public/index.html'
   ],
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '800px',
@@ -13,6 +14,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Work Sans', 'sans-serif'],
+      mono: ['ui-monospace', 'monospace'],
     },
   },
   plugins: [],
