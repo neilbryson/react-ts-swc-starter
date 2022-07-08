@@ -1,8 +1,13 @@
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+const getEnv = require('./scripts/env');
 
 const isProd = process.env.NODE_ENV === 'production';
+
+const envVars = getEnv();
 
 module.exports = {
   bail: isProd,
@@ -13,8 +18,10 @@ module.exports = {
       },
     },
     compress: false,
-    historyApiFallback: false,
+    historyApiFallback: true,
     hot: true,
+    open: process.env.DEV_AUTO_OPEN === 'true',
+    port: process.env.DEV_PORT || '3000',
     static: {
       directory: path.join(__dirname, 'public'),
     },
@@ -51,6 +58,7 @@ module.exports = {
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
+    new webpack.DefinePlugin(envVars),
     new HtmlWebpackPlugin({ template: path.join(__dirname, 'public/index.html') }),
   ],
   resolve: {
