@@ -1,5 +1,5 @@
-import { Increment, LocalActions } from './types';
+import { createAction } from '@reduxjs/toolkit';
 
-export const increment = (): Increment => ({
-  type: LocalActions.INCREMENT,
-});
+import { LocalActions } from './types';
+
+export const increment = createAction(LocalActions.INCREMENT);
